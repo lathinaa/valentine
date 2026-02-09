@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Happy Valentine's Day!</h1>
+            <div class="mascot-container">
+                <!-- Placeholder for mascot image -->
+                <img id="mascot" src="assets/hello%20kitty.png" alt="Cute Mascot" class="mascot">
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <button class="nav-btn" onclick="showSection('reasons')">Why I Love You</button>
+            <button class="nav-btn" onclick="showSection('memories')">Our Memories</button>
+            <button class="nav-btn" onclick="showSection('game')">Play Game</button>
+            <button class="nav-btn" onclick="showSection('coupon')">Date Coupon</button>
+            <button class="nav-btn" onclick="showSection('message')">My Message</button>
+        </nav>
+
+
+
+        <main id="content-area">
+            <section id="welcome" class="content-section active">
+                <p>Welcome to your special Valentine's Day page! Click a button above to see your surprises. ❤️</p>
+            </section>
+
+            <section id="reasons" class="content-section hidden">
+                <h2>Why I Love You</h2>
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-icon">✨</div>
+                        <p>Your radiant eyes and that adorable smile that never fails to make my day brighter.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">😭</div>
+                        <p>How you always so goofy and cute</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">❤️</div>
+                        <p>Your kindness and warm heart.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">🌟</div>
+                        <p>The way you support my dreams no matter what.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">🦄</div>
+                        <p><b>Because you are simply YOU!</b></p>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="showSection('welcome')">Back</button>
+            </section>
+
+            <section id="memories" class="content-section hidden">
+                <h2>Our Memories</h2>
+                <p class="instruction-hint">Click a gift to open! Press SPACE to close.</p>
+                <div class="gallery">
+                    <div class="memory-gift" data-photo="assets/haley1.jpg"
+                        data-caption="Look babyy our first datee! Our first time holding hands hehe 💖">
+                        <div class="gift-lid"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="memory-gift" data-photo="assets/haley2.jpg"
+                        data-caption="Muru era was so so so goated i miss it sometimes🌹">
+                        <div class="gift-lid"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="memory-gift" data-photo="assets/haley3.jpg"
+                        data-caption="Who's that gorgeous diva standing beside me 🤤">
+                        <div class="gift-lid"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                </div>
+                <!-- Photo Modal -->
+                <div id="memory-modal" class="hidden">
+                    <div class="modal-content">
+                        <img id="modal-img" src="" alt="Memory">
+                        <p id="modal-caption"></p>
+                        <p class="modal-hint">Press [SPACE] to Close</p>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="showSection('welcome')">Back</button>
+            </section>
+
+            <section id="coupon" class="content-section hidden">
+                <h2>Date Night Coupon</h2>
+                <div class="coupon-card">
+                    <h3>Valid for One Date Night</h3>
+                    <p>Redeemable for dinner at your favorite place and a movie!</p>
+                    <p class="expiry">No Expiry Date ❤️</p>
+                </div>
+                <button class="back-btn" onclick="showSection('welcome')">Back</button>
+            </section>
+
+            <section id="message" class="content-section hidden">
+                <h2>My Message for You</h2>
+                <div class="message-card">
+                    <p>To my most precious Haley,</p>
+                    <p>Happy Valentine's Dayyy my lovee!💗 hehehe i made this site just for you to show you how much you
+                        mean to me. i
+                        really hope you love it!!</p>
+                    <p>You are the best person i know 😍 i cherish and adore you so muchhhh. i love youu so muchhh more
+                        than anything in this world, even more than my own life, even more than entire universee!!💖💖
+                    </p>
+                    <p>I hope you'll love the gifts i givee you and i promise i'll always be there for you no matter
+                        whatt!</p>
+                    <p>PS: after you got ur gifts irl, play the game again to see something🤩</p>
+                    <p>i miss you so muchhhhhh when ur not with me 😔🥺 i wanna chew you 🤤</p>
+                    <p>Forever yours and ur future hubby,</p>
+                    <p class="signature">thina :3 </p>
+                </div>
+                <button class="back-btn" onclick="showSection('welcome')">Back</button>
+            </section>
+
+            <section id="game" class="content-section hidden">
+                <h2>Minigame Corner 🎮</h2>
+                <div id="game-container">
+                    <!-- Sky Background -->
+                    <div id="sky-background">
+                        <div class="cloud-bg c1">☁️</div>
+                        <div class="cloud-bg c2">☁️</div>
+                        <div class="cloud-bg c3">☁️</div>
+                    </div>
+                    <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+                    <!-- Sign Overlay -->
+                    <div id="sign-overlay" class="hidden">
+                        <div class="sign-content">
+                            <p id="sign-text">Message goes here...</p>
+                            <p class="sign-hint">(Press 'F' or move away to close)</p>
+                        </div>
+                    </div>
+
+                    <!-- Secret Gift Overlay -->
+                    <div id="gift-overlay" class="hidden">
+                        <div class="gift-content">
+                            <h1 class="gift-title">YEAY, SECRET GIFT!</h1>
+                            <div class="gift-image-container">
+                                <img id="gift-reveal-img" src="" alt="Secret Gift">
+                            </div>
+                            <p id="gift-description">You found a secret!</p>
+                            <p class="gift-instruction">Press F to Continue</p>
+                        </div>
+                    </div>
+
+                    <div id="game-ui">
+                        <div id="score-board">Items: <span id="item-count">0</span>/<span id="total-item-count">0</span>
+                        </div>
+                        <div id="mobile-controls" class="hidden-on-desktop">
+                            <button id="btn-left">⬅️</button>
+                            <button id="btn-jump">Jump</button>
+                            <button id="btn-right">➡️</button>
+                        </div>
+                        <button id="btn-mute" title="Toggle Music">🔊</button>
+                    </div>
+
+                    <!-- Audio Element -->
+                    <audio id="bgm" loop preload="auto">
+                        <source src="assets/bgm.mp3" type="audio/mpeg">
+                    </audio>
+                    <audio id="victory-bgm" loop preload="auto">
+                        <source src="assets/bgm 2.mp3" type="audio/mpeg">
+                    </audio>
+                    <audio id="gameover-bgm" loop preload="auto">
+                        <source src="assets/bgm 3.mp3" type="audio/mpeg">
+                    </audio>
+
+                    <!-- Start Screen Overlay -->
+                    <div id="start-screen-overlay">
+                        <h1>Super Haley World</h1>
+                        <img src="assets/hello kitty 2.png" class="start-deco left-deco" alt="Hello Kitty Left">
+                        <img src="assets/hello kitty 3.png" class="start-deco right-deco" alt="Hello Kitty Right">
+                        <div class="instructions-box">
+                            <p><b>Mission:</b> Collect <span id="mission-count-start">8</span> Items & Reach the Castle!
+                                (Check for ✨)</p>
+                            <p><b>Controls:</b> <span class="key">⬅️</span> <span class="key">➡️</span> to Move</p>
+                            <p><span class="key">Space</span> to Jump</p>
+                            <p><span class="key">⬆️</span> <span class="key">⬇️</span> to Climb</p>
+                            <p><span class="key">F</span> to Interact</p>
+                        </div>
+                        <button id="btn-start-game">Start Game</button>
+                    </div>
+
+                    <!-- Game Over Overlay -->
+                    <div id="game-over-overlay" style="display: none;">
+                        <h1 class="slide-left">GAME</h1>
+                        <h1 class="slide-right">OVER</h1>
+                        <button id="try-again-btn" class="slide-up" onclick="window.location.reload()">Try
+                            Again</button>
+                    </div>
+
+                    <!-- Victory Overlay -->
+                    <div id="victory-overlay" style="display: none;">
+                        <h1 class="victory-text">CONGRATULATIONS!</h1>
+                        <div class="victory-scene">
+                            <img src="assets/girl_player.png" class="victory-girl" alt="Girl">
+                            <img src="assets/boyfriend.png" class="victory-boy" alt="Boy">
+                        </div>
+                        <h2 class="love-text">I LOVE YOU! ❤️</h2>
+                        <div class="floating-hearts">❤️❤️❤️</div>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="showSection('welcome')">Back</button>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
